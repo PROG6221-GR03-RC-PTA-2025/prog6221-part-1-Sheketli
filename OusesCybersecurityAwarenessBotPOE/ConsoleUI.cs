@@ -24,8 +24,9 @@ namespace OusesCybersecurityAwarenessBotPOE
 
         public static void DisplayExitMessage()
         {
+            Console.WriteLine();
             ConsoleUI.PrintMessage("Thank you for using the Ouses Cybersecurity Awareness Bot!" +
-                              "\nStay safe online and have a great day!", ConsoleColor.Green);
+                                   "\nStay safe online and have a great day!", ConsoleColor.Green);
             Console.ResetColor();
         }
     }
