@@ -27,7 +27,7 @@ namespace OusesCybersecurityAwarenessBotPOE
             AudioPlayer.PlayGreeting();
 
             // Initialize and start the chatbot
-            Chatbot chatbot = new Chatbot();
+            ChatBot chatbot = new ChatBot();
             chatbot.Start();
         }
     }
