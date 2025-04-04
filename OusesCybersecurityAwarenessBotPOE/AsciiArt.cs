@@ -11,7 +11,7 @@ namespace OusesCybersecurityAwarenessBotPOE
         public static void DisplayLogo()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine(@"
+            ConsoleUI.PrintMessage(@"
 |=================================================|
 |    ██████╗ ██╗   ██╗███████╗███████╗███████╗    |
 |   ██╔═══██╗██║   ██║██╔════╝██╔════╝██╔════╝    |
@@ -22,7 +22,7 @@ namespace OusesCybersecurityAwarenessBotPOE
 |   Optimized User Security & Encryption Solutions|
 |   Cybersecurity Awareness Bot                   |   
 |   Stay Safe Online!                             |
-|=================================================|");
+|=================================================|", ConsoleColor.Cyan);
 
             // Reset console text color to default
             Console.ResetColor();

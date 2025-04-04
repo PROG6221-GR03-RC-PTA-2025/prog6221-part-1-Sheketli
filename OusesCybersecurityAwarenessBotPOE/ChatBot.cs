@@ -36,6 +36,9 @@ namespace OusesCybersecurityAwarenessBotPOE
                                    "\n- Phishing" +
                                    "\n- Safe Browsing" +
                                    "\n- virus" +
+                                   "\n- encryption" +
+                                   "\n- firewall" +
+                                   "\n- malware" +
                                    "\n...or anything about cybersecurity awareness.", ConsoleColor.Yellow);
             ConsoleUI.PrintMessage("Type 'exit' or 'quit' to end the conversation.", ConsoleColor.DarkRed);
 
