@@ -117,6 +117,5 @@ namespace OusesCybersecurityAwarenessBotPOE
                 ConsoleUI.PrintMessage("Bot: I'm not sure about that. Can you ask something else related to cybersecurity?", ConsoleColor.Red);
             }
         }
-
     }
 }
