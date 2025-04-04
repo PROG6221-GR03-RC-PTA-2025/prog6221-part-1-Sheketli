@@ -1,7 +1,0 @@
-C:\Users\RC_Student_lab\source\repos\OusesCybersecurityAwarenessBot\bin\Debug\OusesCybersecurityAwarenessBot.exe.config
-C:\Users\RC_Student_lab\source\repos\OusesCybersecurityAwarenessBot\bin\Debug\OusesCybersecurityAwarenessBot.exe
-C:\Users\RC_Student_lab\source\repos\OusesCybersecurityAwarenessBot\bin\Debug\OusesCybersecurityAwarenessBot.pdb
-C:\Users\RC_Student_lab\source\repos\OusesCybersecurityAwarenessBot\obj\Debug\OusesCybersecurityAwarenessBot.csproj.AssemblyReference.cache
-C:\Users\RC_Student_lab\source\repos\OusesCybersecurityAwarenessBot\obj\Debug\OusesCybersecurityAwarenessBot.csproj.CoreCompileInputs.cache
-C:\Users\RC_Student_lab\source\repos\OusesCybersecurityAwarenessBot\obj\Debug\OusesCybersecurityAwarenessBot.exe
-C:\Users\RC_Student_lab\source\repos\OusesCybersecurityAwarenessBot\obj\Debug\OusesCybersecurityAwarenessBot.pdb
