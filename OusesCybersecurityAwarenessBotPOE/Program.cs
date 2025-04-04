@@ -14,21 +14,36 @@ namespace OusesCybersecurityAwarenessBotPOE
 
             Console.Title = "Ouses Cybersecurity Awareness Bot"; // Set console window title
 
-            //Console.SetWindowSize(132, 41); // Set console window size
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.WriteLine("/////////////////////////////////////////////////////////////////////////////////////////////////");
+            Console.ResetColor();
 
             // Display a message before the audio has played
             ConsoleUI.PrintMessage("\nHello, Welcome to Ouses Cybersecurity Awareness Bot!" +
                                  "\nI'm here to help you stay safe online.", ConsoleColor.Green);
 
+            // Play voice greeting using a pre-recorded sound file
+            AudioPlayer.PlayGreeting();
+
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.WriteLine("/////////////////////////////////////////////////////////////////////////////////////////////////");
+            Console.ResetColor();
+
             // Display ASCII Art logo
             AsciiArt.DisplayLogo();
 
-            // Play voice greeting using a pre-recorded sound file
-            AudioPlayer.PlayGreeting();
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.WriteLine("/////////////////////////////////////////////////////////////////////////////////////////////////");
+            Console.ResetColor();
+
 
             // Initialize and start the chatbot
             ChatBot chatbot = new ChatBot();
             chatbot.Start();
+
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.WriteLine("/////////////////////////////////////////////////////////////////////////////////////////////////");
+            Console.ResetColor();
         }
     }
 }
