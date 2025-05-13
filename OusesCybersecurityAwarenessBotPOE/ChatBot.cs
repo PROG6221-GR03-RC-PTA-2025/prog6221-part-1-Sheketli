@@ -92,6 +92,18 @@ namespace OusesCybersecurityAwarenessBotPOE
             return "I'm not sure I understand. Can you try rephrasing?";
         }
 
+        // Method to detect sentiment in user input
+        private string DetectSentiment(string input)
+        {
+            foreach (var pair in sentimentResponses)
+            {
+                if (input.Contains(pair.Key))
+                    return pair.Value;
+            }
+            return null;
+        }
+
+
         // Method to start the chatbot interaction
         public void Start()
         {
