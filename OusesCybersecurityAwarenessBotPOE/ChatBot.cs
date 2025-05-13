@@ -71,6 +71,27 @@ namespace OusesCybersecurityAwarenessBotPOE
             sentimentResponses["bored"] = "Let's turn that boredom into something productive! How about learning a new cybersecurity tip?";
         }
 
+        // Method to handle user input and provide a response
+        public string ProcessInput(string input)
+        {
+            input = input.ToLower();
+
+            ResponseDelegate[] processors =
+            {
+            DetectSentiment,
+            UpdateMemory,
+            CheckForKeyword
+            };
+
+            foreach (var process in processors)
+            {
+                string result = process(input);
+                if (result != null)
+                    return result;
+            }
+            return "I'm not sure I understand. Can you try rephrasing?";
+        }
+
         // Method to start the chatbot interaction
         public void Start()
         {
