@@ -6,8 +6,6 @@ using System.Threading.Tasks;
 
 namespace OusesCybersecurityAwarenessBotPOE
 {
-    public delegate string ResponseDelegate(string input);
-
     internal class UserMemory
     {
         public string Name { get; set; }
