@@ -103,6 +103,29 @@ namespace OusesCybersecurityAwarenessBotPOE
             return null;
         }
 
+        // Method to update user memory based on input
+        private string UpdateMemory(string input)
+        {
+            if (input.Contains("my name is"))
+            {
+                memory.Name = input.Substring(input.LastIndexOf("is") + 3).Trim();
+                return $"Nice to meet you, {memory.Name}!";
+            }
+
+            if (input.Contains("i'm interested in"))
+            {
+                memory.FavoriteTopic = input.Substring(input.LastIndexOf("in") + 3).Trim();
+                return $"Great! I'll remember that you're interested in {memory.FavoriteTopic}.";
+            }
+            if (input.Contains("my favorite topic is"))
+            {
+                memory.FavoriteTopic = input.Substring(input.LastIndexOf("is") + 3).Trim();
+                return $"Got it! Your favorite topic is {memory.FavoriteTopic}.";
+            }
+
+            return null;
+        }
+
         // Method to start the chatbot interaction
         public void Start()
         {
