@@ -83,11 +83,10 @@ namespace OusesCybersecurityAwarenessBotPOE
             CheckForKeyword
             };
 
-            foreach (var process in processors)
+            foreach (var pair in sentimentResponses)
             {
-                string result = process(input);
-                if (result != null)
-                    return result;
+                if (input.Contains(pair.Key))
+                    return pair.Value;
             }
             return "I'm not sure I understand. Can you try rephrasing?";
         }
