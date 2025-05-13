@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace OusesCybersecurityAwarenessBotPOE
 {
+    // delegate to handle user input and provide a response
+    public delegate string ResponseDelegate(string input);
+
     internal class ChatBot
     {
         string name = null;
