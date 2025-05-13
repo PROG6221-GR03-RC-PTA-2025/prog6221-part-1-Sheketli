@@ -21,6 +21,13 @@ namespace OusesCybersecurityAwarenessBotPOE
         private UserMemory memory = new UserMemory();
         private Random rand = new Random();
 
+        // Constructor to initialize the chatbot
+        public ChatBot()
+        {
+            InitializeKeywordResponses();
+            InitializeSentimentResponses();
+        }
+
         // Method to start the chatbot interaction
         public void Start()
         {
