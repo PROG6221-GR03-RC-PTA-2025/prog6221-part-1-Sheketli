@@ -103,7 +103,6 @@ namespace OusesCybersecurityAwarenessBotPOE
             return null;
         }
 
-
         // Method to start the chatbot interaction
         public void Start()
         {
