@@ -11,8 +11,15 @@ namespace OusesCybersecurityAwarenessBotPOE
 
     internal class ChatBot
     {
+        // Properties to store user information
         string name = null;
         string userInput = null;
+
+        // Dictionary to store keyword responses
+        private Dictionary<string, List<string>> keywordResponses = new Dictionary<string, List<string>>();
+        private Dictionary<string, string> sentimentResponses = new Dictionary<string, string>();
+        private UserMemory memory = new UserMemory();
+        private Random rand = new Random();
 
         // Method to start the chatbot interaction
         public void Start()
