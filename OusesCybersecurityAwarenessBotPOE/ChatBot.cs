@@ -126,6 +126,25 @@ namespace OusesCybersecurityAwarenessBotPOE
             return null;
         }
 
+        // Method to check for keywords in user input and provide a response
+        private string CheckForKeyword(string input)
+        {
+            foreach (var keyword in keywordResponses.Keys)
+            {
+                if (input.Contains(keyword))
+                {
+                    string prefix = memory.FavoriteTopic == keyword
+                        ? $"Since you're interested in {keyword}, here's a tip: "
+                        : "";
+
+                    var responses = keywordResponses[keyword];
+                    return prefix + responses[rand.Next(responses.Count)];
+                }
+            }
+
+            return null;
+        }
+
         // Method to start the chatbot interaction
         public void Start()
         {
