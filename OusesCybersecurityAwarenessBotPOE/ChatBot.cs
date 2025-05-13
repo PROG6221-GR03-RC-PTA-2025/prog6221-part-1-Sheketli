@@ -28,6 +28,35 @@ namespace OusesCybersecurityAwarenessBotPOE
             InitializeSentimentResponses();
         }
 
+        // Method to initialize keyword responses
+        private void InitializeKeywordResponses()
+        {
+            keywordResponses["password"] = new List<string>
+        {
+            "Use a mix of letters, numbers, and symbols in your passwords.",
+            "Never reuse the same password across multiple sites.",
+            "Avoid using personal details in your passwords."
+        };
+            keywordResponses["scam"] = new List<string>
+        {
+            "If something sounds too good to be true, it probably is.",
+            "Always verify links and email addresses before clicking.",
+            "Watch out for urgent messages asking for personal info."
+        };
+            keywordResponses["privacy"] = new List<string>
+        {
+            "Adjust your social media privacy settings.",
+            "Only share personal info on secure sites.",
+            "Use two-factor authentication."
+        };
+            keywordResponses["phishing"] = new List<string>
+        {
+            "Be cautious of emails asking for login details.",
+            "Do not click suspicious links in emails.",
+            "Legitimate companies never ask for passwords via email."
+        };
+        }
+
         // Method to start the chatbot interaction
         public void Start()
         {
