@@ -94,11 +94,10 @@ namespace OusesCybersecurityAwarenessBotPOE
         // Method to detect sentiment in user input
         private string DetectSentiment(string input)
         {
-            foreach (var process in processors)
+            foreach (var pair in sentimentResponses)
             {
-                string result = process(input);
-                if (result != null)
-                    return result;
+                if (input.Contains(pair.Key))
+                    return pair.Value;
             }
             return null;
         }
