@@ -32,29 +32,43 @@ namespace OusesCybersecurityAwarenessBotPOE
         private void InitializeKeywordResponses()
         {
             keywordResponses["password"] = new List<string>
-        {
-            "Use a mix of letters, numbers, and symbols in your passwords.",
-            "Never reuse the same password across multiple sites.",
-            "Avoid using personal details in your passwords."
-        };
+            {
+                "Use a mix of letters, numbers, and symbols in your passwords.",
+                "Never reuse the same password across multiple sites.",
+                "Avoid using personal details in your passwords."
+            };
             keywordResponses["scam"] = new List<string>
-        {
-            "If something sounds too good to be true, it probably is.",
-            "Always verify links and email addresses before clicking.",
-            "Watch out for urgent messages asking for personal info."
-        };
+            {
+                "If something sounds too good to be true, it probably is.",
+                "Always verify links and email addresses before clicking.",
+                "Watch out for urgent messages asking for personal info."
+            };
             keywordResponses["privacy"] = new List<string>
-        {
-            "Adjust your social media privacy settings.",
-            "Only share personal info on secure sites.",
-            "Use two-factor authentication."
-        };
+            {
+                "Adjust your social media privacy settings.",
+                "Only share personal info on secure sites.",
+                "Use two-factor authentication."
+            };
             keywordResponses["phishing"] = new List<string>
+            {
+                "Be cautious of emails asking for login details.",
+                "Do not click suspicious links in emails.",
+                "Legitimate companies never ask for passwords via email."
+            };
+        }
+
+        // Method to initialize sentiment responses
+        private void InitializeSentimentResponses()
         {
-            "Be cautious of emails asking for login details.",
-            "Do not click suspicious links in emails.",
-            "Legitimate companies never ask for passwords via email."
-        };
+            sentimentResponses["happy"] = "I'm glad to hear that!";
+            sentimentResponses["sad"] = "I'm sorry to hear that. If you need someone to talk to, I'm here for you.";
+            sentimentResponses["angry"] = "It's okay to feel angry sometimes. Let's talk about it.";
+            sentimentResponses["confused"] = "It's normal to feel confused. Can I help clarify something for you?";
+            sentimentResponses["worried"] = "It's okay to feel worried. Cybersecurity can be tricky, but you're not alone!";
+            sentimentResponses["curious"] = "Curiosity is great! Let's explore online safety together.";
+            sentimentResponses["frustrated"] = "I get that this can be frustrating. I'm here to help make it easier.";
+            sentimentResponses["excited"] = "That's awesome! Let's channel that excitement into learning about online safety.";
+            sentimentResponses["bored"] = "Let's turn that boredom into something productive! How about learning a new cybersecurity tip?";
         }
 
         // Method to start the chatbot interaction
