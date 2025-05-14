@@ -43,6 +43,9 @@ namespace OusesCybersecurityAwarenessBotPOE
             ChatBot memory = new ChatBot();
             ChatBot bot = new ChatBot(memory);
 
+            string name = ConsoleUI.GetUserInput("What's your name? ");
+            bot.GreetUser(name);
+
             string interest = ConsoleUI.GetUserInput("\nWhat cybersecurity topic are you interested in? (e.g., privacy, phishing): ");
             bot.AskCyberTopic(interest);
 

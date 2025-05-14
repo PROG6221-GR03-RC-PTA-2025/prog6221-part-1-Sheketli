@@ -25,12 +25,14 @@ namespace OusesCybersecurityAwarenessBotPOE
             this.memory = userMemory;
         }
 
+        // Method to greet the user and remember their name
         public void GreetUser(string name)
         {
             memory.Remember("name", name);
             Console.WriteLine($"Nice to meet you, {name}! I'm here to help you with cybersecurity tips.");
         }
 
+        // Method to ask the user about their interest in a specific cybersecurity topic
         public void AskCyberTopic(string input)
         {
             if (input.IndexOf("privacy", StringComparison.OrdinalIgnoreCase) >= 0)
