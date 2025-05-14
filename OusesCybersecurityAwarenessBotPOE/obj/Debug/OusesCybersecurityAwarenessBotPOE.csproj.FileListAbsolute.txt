@@ -1,0 +1,7 @@
+C:\Users\RC_Student_lab\source\repos\POE Project part 1\prog6221-part-1-Sheketli\OusesCybersecurityAwarenessBotPOE\bin\Debug\OusesCybersecurityAwarenessBotPOE.exe.config
+C:\Users\RC_Student_lab\source\repos\POE Project part 1\prog6221-part-1-Sheketli\OusesCybersecurityAwarenessBotPOE\bin\Debug\OusesCybersecurityAwarenessBotPOE.exe
+C:\Users\RC_Student_lab\source\repos\POE Project part 1\prog6221-part-1-Sheketli\OusesCybersecurityAwarenessBotPOE\bin\Debug\OusesCybersecurityAwarenessBotPOE.pdb
+C:\Users\RC_Student_lab\source\repos\POE Project part 1\prog6221-part-1-Sheketli\OusesCybersecurityAwarenessBotPOE\obj\Debug\OusesCybersecurityAwarenessBotPOE.csproj.AssemblyReference.cache
+C:\Users\RC_Student_lab\source\repos\POE Project part 1\prog6221-part-1-Sheketli\OusesCybersecurityAwarenessBotPOE\obj\Debug\OusesCybersecurityAwarenessBotPOE.csproj.CoreCompileInputs.cache
+C:\Users\RC_Student_lab\source\repos\POE Project part 1\prog6221-part-1-Sheketli\OusesCybersecurityAwarenessBotPOE\obj\Debug\OusesCybersecurityAwarenessBotPOE.exe
+C:\Users\RC_Student_lab\source\repos\POE Project part 1\prog6221-part-1-Sheketli\OusesCybersecurityAwarenessBotPOE\obj\Debug\OusesCybersecurityAwarenessBotPOE.pdb
