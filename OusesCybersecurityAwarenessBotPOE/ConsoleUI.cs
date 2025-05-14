@@ -35,5 +35,11 @@ namespace OusesCybersecurityAwarenessBotPOE
                                    "\nStay safe online and have a great day!", ConsoleColor.Green);
             Console.ResetColor();
         }
+
+        public static string GetUserInput(string prompt)
+        {
+            Console.Write(prompt);
+            return Console.ReadLine();
+        }
     }
 }
