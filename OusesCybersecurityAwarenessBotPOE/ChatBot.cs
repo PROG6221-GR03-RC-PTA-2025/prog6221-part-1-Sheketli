@@ -32,64 +32,46 @@ namespace OusesCybersecurityAwarenessBotPOE
         {
             keywordResponses["password"] = new List<string>
             {
-                "Use a mix of letters, numbers, and symbols in your passwords.",
-                "Never reuse the same password across multiple sites.",
-                "Avoid using personal details in your passwords."
+                "Use a mix of letters, numbers, and symbols in your passwords.\n Never reuse the same password across multiple sites.\n Avoid using personal details in your passwords.",
             };
 
             keywordResponses["scam"] = new List<string>
             {
-                "If something sounds too good to be true, it probably is.",
-                "Always verify links and email addresses before clicking.",
-                "Watch out for urgent messages asking for personal info."
+                "If something sounds too good to be true, it probably is.\n Always verify links and email addresses before clicking.\n Watch out for urgent messages asking for personal info.",
             };
             keywordResponses["privacy"] = new List<string>
             {
-                "Adjust your social media privacy settings.",
-                "Only share personal info on secure sites.",
-                "Use two-factor authentication."
+                "Adjust your social media privacy settings.\n Only share personal info on secure sites.\n Use two-factor authentication.",
             };
 
             keywordResponses["encryption"] = new List<string>
             {
-                "Encryption protects your data by converting it into a code.",
-                "Use encryption for sensitive files and communications.",
-                "End-to-end encryption ensures only you and the recipient can read the messages."
+                "Encryption protects your data by converting it into a code.\n Use encryption for sensitive files and communications.\n End-to-end encryption ensures only you and the recipient can read the messages.",
             };
 
             keywordResponses["malware"] = new List<string>
             {
-                "Malware can steal your data or damage your system.",
-                "Keep your antivirus software updated.",
-                "Avoid downloading files from untrusted sources."
+                "Malware can steal your data or damage your system.\n Keep your antivirus software updated.\n Avoid downloading files from untrusted sources.",
             };
 
             keywordResponses["safe browsing"] = new List<string>
             {
-                "Always check for HTTPS in the URL before entering sensitive information.",
-                "Avoid clicking on pop-up ads or suspicious links.",
-                "Use a reputable browser with built-in security features."
+                "Always check for HTTPS in the URL before entering sensitive information.\n Avoid clicking on pop-up ads or suspicious links.\n Use a reputable browser with built-in security features.",
             };
 
             keywordResponses["virus"] = new List<string>
             {
-                "A virus is a type of malware that can replicate itself.",
-                "Keep your operating system and software updated to prevent viruses.",
-                "Run regular scans with your antivirus software."
+                "A virus is a type of malware that can replicate itself.\n Keep your operating system and software updated to prevent viruses.\n Run regular scans with your antivirus software.",
             };
 
             keywordResponses["firewall"] = new List<string>
             {
-                "A firewall acts as a barrier between your computer and the internet.",
-                "Keep your firewall enabled to protect against unauthorized access.",
-                "Regularly update your firewall settings."
+                "A firewall acts as a barrier between your computer and the internet.\n Keep your firewall enabled to protect against unauthorized access.\n Regularly update your firewall settings.",
             };
 
             keywordResponses["phishing"] = new List<string>
             {
-                "Be cautious of emails asking for login details.",
-                "Do not click suspicious links in emails.",
-                "Legitimate companies never ask for passwords via email."
+                "Be cautious of emails asking for login details.\n Do not click suspicious links in emails.\n Legitimate companies never ask for passwords via email.",
             };
         }
 
@@ -240,48 +222,7 @@ namespace OusesCybersecurityAwarenessBotPOE
 
                 string response = DetectSentiment(input) ?? UpdateMemory(input) ?? CheckForKeyword(input) ?? "I'm not sure I understand. Can you rephrase?";
 
-                ConsoleUI.PrintMessage("Bot>> " + response, ConsoleColor.Cyan);
-
-                // Call the RespondToQuestion method to handle the input
-                RespondToQuestion(input);
-            }
-        }
-
-        private static void RespondToQuestion(string question)
-        {
-            Console.WriteLine();
-            // Basic responses based on keywords
-            if (question.Contains("virus"))
-            {
-                ConsoleUI.PrintMessage("Bot: Viruses are malicious software that can replicate themselves and spread to other computers.", ConsoleColor.Cyan);
-            }
-            else if (question.Contains("password safety"))
-            {
-                ConsoleUI.PrintMessage("Bot: Password safety is crucial. Use strong, unique passwords and enable two-factor authentication.", ConsoleColor.Cyan);
-            }
-            else if (question.Contains("safe browsing"))
-            {
-                ConsoleUI.PrintMessage("Bot: Safe browsing involves avoiding suspicious links and ensuring websites are secure.", ConsoleColor.Cyan);
-            }
-            else if (question.Contains("encryption"))
-            {
-                ConsoleUI.PrintMessage("Bot: Encryption is the process of converting information into a code to prevent unauthorized access.", ConsoleColor.Cyan);
-            }
-            else if (question.Contains("phishing"))
-            {
-                ConsoleUI.PrintMessage("Bot: Phishing is a method used by cybercriminals to trick individuals into providing sensitive information.", ConsoleColor.Cyan);
-            }
-            else if (question.Contains("firewall"))
-            {
-                ConsoleUI.PrintMessage("Bot: A firewall is a network security system that monitors and controls incoming and outgoing network traffic.", ConsoleColor.Cyan);
-            }
-            else if (question.Contains("malware"))
-            {
-                ConsoleUI.PrintMessage("Bot: Malware is software designed to disrupt, damage, or gain unauthorized access to computer systems.", ConsoleColor.Cyan);
-            }
-            else
-            {
-                ConsoleUI.PrintMessage("Bot: I'm not sure about that. Can you ask something else related to cybersecurity?", ConsoleColor.Red);
+                ConsoleUI.PrintMessage("Bot: " + response, ConsoleColor.Cyan);
             }
         }
     }
