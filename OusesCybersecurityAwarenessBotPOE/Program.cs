@@ -11,7 +11,6 @@ namespace OusesCybersecurityAwarenessBotPOE
         static void Main(string[] args)
         {
             Console.OutputEncoding = Encoding.UTF8; // Enable special characters for better console display
-
             Console.Title = "Ouses Cybersecurity Awareness Bot"; // Set console window title
 
             Console.ForegroundColor = ConsoleColor.DarkRed;
