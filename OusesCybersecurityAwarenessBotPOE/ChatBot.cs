@@ -225,24 +225,22 @@ namespace OusesCybersecurityAwarenessBotPOE
                 ConsoleUI.PrintMessage("You: ", ConsoleColor.Blue);
                 string input = Console.ReadLine()?.Trim().ToLower(); // Normalize input
 
-                if (string.IsNullOrWhiteSpace(input)) continue;
+                if (string.IsNullOrWhiteSpace(input))
                 {
                     ConsoleUI.PrintMessage("Bot: Please enter a valid question.", ConsoleColor.Red);
+                    continue;
                 }
 
                 // Check if the input is an exit command
                 if (input == "exit" || input == "quit")
                 {
                     ConsoleUI.DisplayExitMessage();
-                    break;
+                    return;
                 }
 
-                // Process the input and get a response
                 string response = DetectSentiment(input) ?? UpdateMemory(input) ?? CheckForKeyword(input) ?? "I'm not sure I understand. Can you rephrase?";
 
-                // Print the bot's response
                 ConsoleUI.PrintMessage("Bot>> " + response, ConsoleColor.Cyan);
-
 
                 // Call the RespondToQuestion method to handle the input
                 RespondToQuestion(input);

@@ -21,7 +21,7 @@ namespace OusesCybersecurityAwarenessBotPOE
                     player.Load(); // Load the audio file
                     player.PlaySync(); // Play audio synchronously
                 }
-                Thread.Sleep(3000); // Delay to allow the sound to finish
+                Thread.Sleep(1000); // Delay to allow the sound to finish
             }
             catch (Exception ex)
             {
