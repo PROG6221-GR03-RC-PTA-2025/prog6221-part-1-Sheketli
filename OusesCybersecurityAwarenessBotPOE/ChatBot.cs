@@ -11,14 +11,58 @@ namespace OusesCybersecurityAwarenessBotPOE
 
     internal class ChatBot
     {
-        // Properties to store user information
-        string name = null;
-
         // Dictionary to store keyword responses
         private Dictionary<string, List<string>> keywordResponses = new Dictionary<string, List<string>>();
         private Dictionary<string, string> sentimentResponses = new Dictionary<string, string>();
         private UserMemory memory = new UserMemory();
         private Random rand = new Random();
+
+        // Properties to store user information
+        string name = null;
+
+        private ChatMemory memory;
+
+        public ChatBot(ChatMemory chatMemory)
+        {
+            this.memory = chatMemory;
+        }
+
+        public void GreetUser(string name)
+        {
+            memory.Remember("name", name);
+            Console.WriteLine($"Nice to meet you, {name}! I'm here to help you with cybersecurity tips.");
+        }
+
+        public void AskCyberTopic(string input)
+        {
+            if (input.Contains("privacy", StringComparison.OrdinalIgnoreCase))
+            {
+                memory.Remember("interest", "privacy");
+                Console.WriteLine("Great! I'll remember that you're interested in privacy. It's a crucial part of staying safe online.");
+            }
+            else if (input.Contains("phishing", StringComparison.OrdinalIgnoreCase))
+            {
+                memory.Remember("interest", "phishing");
+                Console.WriteLine("Got it! You're interested in phishing. That’s an important topic to understand.");
+            }
+            else
+            {
+                Console.WriteLine("Thanks for sharing! I’ll keep that in mind.");
+            }
+        }
+
+        public void GivePersonalizedTip()
+        {
+            if (memory.HasMemory("interest"))
+            {
+                string interest = memory.Recall("interest");
+                Console.WriteLine($"As someone interested in {interest}, you might want to explore more resources or tools to protect yourself.");
+            }
+            else
+            {
+                Console.WriteLine("Let me know what cybersecurity topic you're interested in, so I can give you better tips!");
+            }
+        }
 
         // Constructor to initialize the chatbot
         public ChatBot()
