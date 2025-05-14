@@ -77,63 +77,63 @@ namespace OusesCybersecurityAwarenessBotPOE
             keywordResponses["password"] = new List<string>
             {
                 "Use a mix of letters, numbers, and symbols in your passwords." +
-                "\n Never reuse the same password across multiple sites." +
-                "\n Avoid using personal details in your passwords.",
+                "\n     Never reuse the same password across multiple sites." +
+                "\n     Avoid using personal details in your passwords.",
             };
 
             keywordResponses["scam"] = new List<string>
             {
                 "If something sounds too good to be true, it probably is." +
-                "\n Always verify links and email addresses before clicking." +
-                "\n Watch out for urgent messages asking for personal info.",
+                "\n     Always verify links and email addresses before clicking." +
+                "\n     Watch out for urgent messages asking for personal info.",
             };
             keywordResponses["privacy"] = new List<string>
             {
                 "Adjust your social media privacy settings." +
-                "\n Only share personal info on secure sites." +
-                "\n Use two-factor authentication.",
+                "\n     Only share personal info on secure sites." +
+                "\n     Use two-factor authentication.",
             };
 
             keywordResponses["encryption"] = new List<string>
             {
                 "Encryption protects your data by converting it into a code." +
-                "\n Use encryption for sensitive files and communications." +
-                "\n End-to-end encryption ensures only you and the recipient can read the messages.",
+                "\n     Use encryption for sensitive files and communications." +
+                "\n     End-to-end encryption ensures only you and the recipient can read the messages.",
             };
 
             keywordResponses["malware"] = new List<string>
             {
                 "Malware can steal your data or damage your system." +
-                "\n Keep your antivirus software updated." +
-                "\n Avoid downloading files from untrusted sources.",
+                "\n     Keep your antivirus software updated." +
+                "\n     Avoid downloading files from untrusted sources.",
             };
 
             keywordResponses["safe browsing"] = new List<string>
             {
                 "Always check for HTTPS in the URL before entering sensitive information." +
-                "\n Avoid clicking on pop-up ads or suspicious links." +
-                "\n Use a reputable browser with built-in security features.",
+                "\n     Avoid clicking on pop-up ads or suspicious links." +
+                "\n     Use a reputable browser with built-in security features.",
             };
 
             keywordResponses["virus"] = new List<string>
             {
                 "A virus is a type of malware that can replicate itself." +
-                "\n Keep your operating system and software updated to prevent viruses." +
-                "\n Run regular scans with your antivirus software.",
+                "\n     Keep your operating system and software updated to prevent viruses." +
+                "\n     Run regular scans with your antivirus software.",
             };
 
             keywordResponses["firewall"] = new List<string>
             {
                 "A firewall acts as a barrier between your computer and the internet." +
-                "\n Keep your firewall enabled to protect against unauthorized access." +
-                "\n Regularly update your firewall settings.",
+                "\n     Keep your firewall enabled to protect against unauthorized access." +
+                "\n     Regularly update your firewall settings.",
             };
 
             keywordResponses["phishing"] = new List<string>
             {
                 "Be cautious of emails asking for login details." +
-                "\n Do not click suspicious links in emails." +
-                "\n Legitimate companies never ask for passwords via email.",
+                "\n     Do not click suspicious links in emails." +
+                "\n     Legitimate companies never ask for passwords via email.",
             };
         }
 
