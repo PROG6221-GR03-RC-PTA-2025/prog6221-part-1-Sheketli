@@ -13,7 +13,6 @@ namespace OusesCybersecurityAwarenessBotPOE
     {
         // Properties to store user information
         string name = null;
-        string userInput = null;
 
         // Dictionary to store keyword responses
         private Dictionary<string, List<string>> keywordResponses = new Dictionary<string, List<string>>();
@@ -212,12 +211,6 @@ namespace OusesCybersecurityAwarenessBotPOE
                                    "\n- malware" +
                                    "\n...or anything about cybersecurity awareness.", ConsoleColor.Yellow);
             ConsoleUI.PrintMessage("Type 'exit' or 'quit' to end the conversation.", ConsoleColor.DarkRed);
-
-            if (userInput == "exit" || userInput == "quit")
-            {
-                ConsoleUI.DisplayExitMessage();
-                return;
-            }
 
             // Start chatbot conversation loop
             ChatLoop();
