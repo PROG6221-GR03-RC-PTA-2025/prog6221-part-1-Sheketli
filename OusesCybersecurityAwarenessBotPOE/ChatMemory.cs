@@ -11,6 +11,9 @@ namespace OusesCybersecurityAwarenessBotPOE
         // Dictionary to store user memory
         private Dictionary<string, string> memory = new Dictionary<string, string>();
 
+        public string Name { get; set; }
+        public string FavoriteTopic { get; set; }
+
         public void Remember(string key, string value)
         {
             memory[key] = value;
