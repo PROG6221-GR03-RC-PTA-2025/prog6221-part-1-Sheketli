@@ -21,129 +21,6 @@ namespace OusesCybersecurityAwarenessBotPOE
         private UserMemory memory = new UserMemory();
         private Random rand = new Random();
 
-        // Constructor to initialize the chatbot
-        public ChatBot()
-        {
-            InitializeKeywordResponses();
-            InitializeSentimentResponses();
-        }
-
-        // Method to initialize keyword responses
-        private void InitializeKeywordResponses()
-        {
-            keywordResponses["password"] = new List<string>
-            {
-                "Use a mix of letters, numbers, and symbols in your passwords.",
-                "Never reuse the same password across multiple sites.",
-                "Avoid using personal details in your passwords."
-            };
-            keywordResponses["scam"] = new List<string>
-            {
-                "If something sounds too good to be true, it probably is.",
-                "Always verify links and email addresses before clicking.",
-                "Watch out for urgent messages asking for personal info."
-            };
-            keywordResponses["privacy"] = new List<string>
-            {
-                "Adjust your social media privacy settings.",
-                "Only share personal info on secure sites.",
-                "Use two-factor authentication."
-            };
-            keywordResponses["phishing"] = new List<string>
-            {
-                "Be cautious of emails asking for login details.",
-                "Do not click suspicious links in emails.",
-                "Legitimate companies never ask for passwords via email."
-            };
-        }
-
-        // Method to initialize sentiment responses
-        private void InitializeSentimentResponses()
-        {
-            sentimentResponses["happy"] = "I'm glad to hear that!";
-            sentimentResponses["sad"] = "I'm sorry to hear that. If you need someone to talk to, I'm here for you.";
-            sentimentResponses["angry"] = "It's okay to feel angry sometimes. Let's talk about it.";
-            sentimentResponses["confused"] = "It's normal to feel confused. Can I help clarify something for you?";
-            sentimentResponses["worried"] = "It's okay to feel worried. Cybersecurity can be tricky, but you're not alone!";
-            sentimentResponses["curious"] = "Curiosity is great! Let's explore online safety together.";
-            sentimentResponses["frustrated"] = "I get that this can be frustrating. I'm here to help make it easier.";
-            sentimentResponses["excited"] = "That's awesome! Let's channel that excitement into learning about online safety.";
-            sentimentResponses["bored"] = "Let's turn that boredom into something productive! How about learning a new cybersecurity tip?";
-        }
-
-        // Method to handle user input and provide a response
-        public string ProcessInput(string input)
-        {
-            input = input.ToLower();
-
-            ResponseDelegate[] processors =
-            {
-            DetectSentiment,
-            UpdateMemory,
-            CheckForKeyword
-            };
-
-            foreach (var pair in sentimentResponses)
-            {
-                if (input.Contains(pair.Key))
-                    return pair.Value;
-            }
-            return "I'm not sure I understand. Can you try rephrasing?";
-        }
-
-        // Method to detect sentiment in user input
-        private string DetectSentiment(string input)
-        {
-            foreach (var pair in sentimentResponses)
-            {
-                if (input.Contains(pair.Key))
-                    return pair.Value;
-            }
-            return null;
-        }
-
-        // Method to update user memory based on input
-        private string UpdateMemory(string input)
-        {
-            if (input.Contains("my name is"))
-            {
-                memory.Name = input.Substring(input.LastIndexOf("is") + 3).Trim();
-                return $"Nice to meet you, {memory.Name}!";
-            }
-
-            if (input.Contains("i'm interested in"))
-            {
-                memory.FavoriteTopic = input.Substring(input.LastIndexOf("in") + 3).Trim();
-                return $"Great! I'll remember that you're interested in {memory.FavoriteTopic}.";
-            }
-            if (input.Contains("my favorite topic is"))
-            {
-                memory.FavoriteTopic = input.Substring(input.LastIndexOf("is") + 3).Trim();
-                return $"Got it! Your favorite topic is {memory.FavoriteTopic}.";
-            }
-
-            return null;
-        }
-
-        // Method to check for keywords in user input and provide a response
-        private string CheckForKeyword(string input)
-        {
-            foreach (var keyword in keywordResponses.Keys)
-            {
-                if (input.Contains(keyword))
-                {
-                    string prefix = memory.FavoriteTopic == keyword
-                        ? $"Since you're interested in {keyword}, here's a tip: "
-                        : "";
-
-                    var responses = keywordResponses[keyword];
-                    return prefix + responses[rand.Next(responses.Count)];
-                }
-            }
-
-            return null;
-        }
-
         // Method to start the chatbot interaction
         public void Start()
         {
@@ -211,6 +88,127 @@ namespace OusesCybersecurityAwarenessBotPOE
                 // Call the RespondToQuestion method to handle the input
                 RespondToQuestion(input);
             }
+        }
+
+        // Constructor to initialize the chatbot
+        public ChatBot()
+        {
+            InitializeKeywordResponses();
+            InitializeSentimentResponses();
+        }
+
+        // Method to initialize keyword responses
+        private void InitializeKeywordResponses()
+        {
+            keywordResponses["password"] = new List<string>
+            {
+                "Use a mix of letters, numbers, and symbols in your passwords.",
+                "Never reuse the same password across multiple sites.",
+                "Avoid using personal details in your passwords."
+            };
+            keywordResponses["scam"] = new List<string>
+            {
+                "If something sounds too good to be true, it probably is.",
+                "Always verify links and email addresses before clicking.",
+                "Watch out for urgent messages asking for personal info."
+            };
+            keywordResponses["privacy"] = new List<string>
+            {
+                "Adjust your social media privacy settings.",
+                "Only share personal info on secure sites.",
+                "Use two-factor authentication."
+            };
+            keywordResponses["phishing"] = new List<string>
+            {
+                "Be cautious of emails asking for login details.",
+                "Do not click suspicious links in emails.",
+                "Legitimate companies never ask for passwords via email."
+            };
+        }
+
+        // Method to initialize sentiment responses
+        private void InitializeSentimentResponses()
+        {
+            sentimentResponses["happy"] = "I'm glad to hear that!";
+            sentimentResponses["sad"] = "I'm sorry to hear that. If you need someone to talk to, I'm here for you.";
+            sentimentResponses["angry"] = "It's okay to feel angry sometimes. Let's talk about it.";
+            sentimentResponses["confused"] = "It's normal to feel confused. Can I help clarify something for you?";
+            sentimentResponses["worried"] = "It's okay to feel worried. Cybersecurity can be tricky, but you're not alone!";
+            sentimentResponses["curious"] = "Curiosity is great! Let's explore online safety together.";
+            sentimentResponses["frustrated"] = "I get that this can be frustrating. I'm here to help make it easier.";
+            sentimentResponses["excited"] = "That's awesome! Let's channel that excitement into learning about online safety.";
+            sentimentResponses["bored"] = "Let's turn that boredom into something productive! How about learning a new cybersecurity tip?";
+        }
+
+        // Method to handle user input and provide a response
+        public string ProcessInput(string input)
+        {
+            input = input.ToLower();
+
+            ResponseDelegate[] processors =
+            {
+                DetectSentiment,
+                UpdateMemory,
+                CheckForKeyword
+            };
+
+            foreach (var pair in sentimentResponses)
+            {
+                if (input.Contains(pair.Key))
+                    return pair.Value;
+            }
+            return "I'm not sure I understand. Can you try rephrasing?";
+        }
+
+        // Method to detect sentiment in user input
+        private string DetectSentiment(string input)
+        {
+            foreach (var pair in sentimentResponses)
+            {
+                if (input.Contains(pair.Key))
+                    return pair.Value;
+            }
+            return null;
+        }
+
+        // Method to update user memory based on input
+        private string UpdateMemory(string input)
+        {
+            if (input.Contains("my name is"))
+            {
+                memory.Name = input.Substring(input.LastIndexOf("is") + 3).Trim();
+                return $"Nice to meet you, {memory.Name}!";
+            }
+
+            if (input.Contains("i'm interested in"))
+            {
+                memory.FavoriteTopic = input.Substring(input.LastIndexOf("in") + 3).Trim();
+                return $"Great! I'll remember that you're interested in {memory.FavoriteTopic}.";
+            }
+            if (input.Contains("my favorite topic is"))
+            {
+                memory.FavoriteTopic = input.Substring(input.LastIndexOf("is") + 3).Trim();
+                return $"Got it! Your favorite topic is {memory.FavoriteTopic}.";
+            }
+            return null;
+        }
+
+        // Method to check for keywords in user input and provide a response
+        private string CheckForKeyword(string input)
+        {
+            foreach (var keyword in keywordResponses.Keys)
+            {
+                if (input.Contains(keyword))
+                {
+                    string prefix = memory.FavoriteTopic == keyword
+                        ? $"Since you're interested in {keyword}, here's a tip: "
+                        : "";
+
+                    var responses = keywordResponses[keyword];
+                    return prefix + responses[rand.Next(responses.Count)];
+                }
+            }
+            return null;
         }
 
         private static void RespondToQuestion(string question)

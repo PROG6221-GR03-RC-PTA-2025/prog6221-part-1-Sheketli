@@ -13,7 +13,7 @@ namespace OusesCybersecurityAwarenessBotPOE
     {
         public static void PlayGreeting()
         {
-            string audioFilePath = Path.Combine(Directory.GetCurrentDirectory(), "HumeAI_voice-preview_OUSES CyberBot.wav"); // Ensure full path resolution
+            string audioFilePath = Path.Combine(Directory.GetCurrentDirectory(), "WelcomeToOuses.wav"); // Ensure full path resolution
             try
             {
                 using (SoundPlayer player = new SoundPlayer(audioFilePath))
