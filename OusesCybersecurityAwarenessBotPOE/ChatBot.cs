@@ -20,11 +20,9 @@ namespace OusesCybersecurityAwarenessBotPOE
         // Properties to store user information
         string name = null;
 
-        private ChatMemory memory;
-
-        public ChatBot(ChatMemory chatMemory)
+        public ChatBot(UserMemory userMemory)
         {
-            this.memory = chatMemory;
+            this.memory = userMemory;
         }
 
         public void GreetUser(string name)
@@ -35,12 +33,12 @@ namespace OusesCybersecurityAwarenessBotPOE
 
         public void AskCyberTopic(string input)
         {
-            if (input.Contains("privacy", StringComparison.OrdinalIgnoreCase))
+            if (input.IndexOf("privacy", StringComparison.OrdinalIgnoreCase) >= 0)
             {
                 memory.Remember("interest", "privacy");
                 Console.WriteLine("Great! I'll remember that you're interested in privacy. It's a crucial part of staying safe online.");
             }
-            else if (input.Contains("phishing", StringComparison.OrdinalIgnoreCase))
+            else if (input.IndexOf("phishing", StringComparison.OrdinalIgnoreCase) >= 0)
             {
                 memory.Remember("interest", "phishing");
                 Console.WriteLine("Got it! You're interested in phishing. That’s an important topic to understand.");
