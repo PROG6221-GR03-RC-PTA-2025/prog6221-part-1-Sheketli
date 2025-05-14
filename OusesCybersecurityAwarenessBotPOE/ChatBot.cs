@@ -37,6 +37,7 @@ namespace OusesCybersecurityAwarenessBotPOE
                 "Never reuse the same password across multiple sites.",
                 "Avoid using personal details in your passwords."
             };
+
             keywordResponses["scam"] = new List<string>
             {
                 "If something sounds too good to be true, it probably is.",
@@ -49,6 +50,42 @@ namespace OusesCybersecurityAwarenessBotPOE
                 "Only share personal info on secure sites.",
                 "Use two-factor authentication."
             };
+
+            keywordResponses["encryption"] = new List<string>
+            {
+                "Encryption protects your data by converting it into a code.",
+                "Use encryption for sensitive files and communications.",
+                "End-to-end encryption ensures only you and the recipient can read the messages."
+            };
+
+            keywordResponses["malware"] = new List<string>
+            {
+                "Malware can steal your data or damage your system.",
+                "Keep your antivirus software updated.",
+                "Avoid downloading files from untrusted sources."
+            };
+
+            keywordResponses["safe browsing"] = new List<string>
+            {
+                "Always check for HTTPS in the URL before entering sensitive information.",
+                "Avoid clicking on pop-up ads or suspicious links.",
+                "Use a reputable browser with built-in security features."
+            };
+
+            keywordResponses["virus"] = new List<string>
+            {
+                "A virus is a type of malware that can replicate itself.",
+                "Keep your operating system and software updated to prevent viruses.",
+                "Run regular scans with your antivirus software."
+            };
+
+            keywordResponses["firewall"] = new List<string>
+            {
+                "A firewall acts as a barrier between your computer and the internet.",
+                "Keep your firewall enabled to protect against unauthorized access.",
+                "Regularly update your firewall settings."
+            };
+
             keywordResponses["phishing"] = new List<string>
             {
                 "Be cautious of emails asking for login details.",
@@ -96,8 +133,7 @@ namespace OusesCybersecurityAwarenessBotPOE
         {
             foreach (var pair in sentimentResponses)
             {
-                if (input.Contains(pair.Key))
-                    return pair.Value;
+                if (input.Contains(pair.Key)) return pair.Value;
             }
             return null;
         }
@@ -161,6 +197,8 @@ namespace OusesCybersecurityAwarenessBotPOE
                 ConsoleUI.PrintMessage("Please enter your name here>>", ConsoleColor.Green);
                 name = Console.ReadLine()?.Trim();
             }
+
+            memory.Name = name;
 
             // Greet user and introduce available topics or exit command
             ConsoleUI.PrintMessage($"\nHello, {name}! I'm here to help you stay safe online.", ConsoleColor.Green);
