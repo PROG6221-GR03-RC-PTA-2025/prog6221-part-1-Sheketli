@@ -221,9 +221,8 @@ namespace OusesCybersecurityAwarenessBotPOE
         {
             while (true)
             {
-                ConsoleUI.PrintMessage("You: ", ConsoleColor.Blue);
-
                 // Get user input
+                ConsoleUI.PrintMessage("You: ", ConsoleColor.Blue);
                 string input = Console.ReadLine()?.Trim().ToLower(); // Normalize input
 
                 if (string.IsNullOrWhiteSpace(input))
