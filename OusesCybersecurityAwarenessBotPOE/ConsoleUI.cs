@@ -38,7 +38,9 @@ namespace OusesCybersecurityAwarenessBotPOE
 
         public static string GetUserInput(string prompt)
         {
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write(prompt);
+            Console.ResetColor();
             return Console.ReadLine();
         }
     }

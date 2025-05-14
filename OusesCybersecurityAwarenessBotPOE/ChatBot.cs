@@ -20,9 +20,9 @@ namespace OusesCybersecurityAwarenessBotPOE
         // Properties to store user information
         string name = null;
 
-        public ChatBot(UserMemory userMemory)
+        public ChatBot(UserMemory memory)
         {
-            this.memory = userMemory;
+            this.memory = memory;
         }
 
         // Method to greet the user and remember their name

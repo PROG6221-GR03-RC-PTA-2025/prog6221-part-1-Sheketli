@@ -41,16 +41,15 @@ namespace OusesCybersecurityAwarenessBotPOE
             chatbot.Start();
 
             ChatBot memory = new ChatBot();
-            ChatBot bot = new ChatBot(memory);
 
             string name = ConsoleUI.GetUserInput("What's your name? ");
-            bot.GreetUser(name);
+            memory.GreetUser(name);
 
             string interest = ConsoleUI.GetUserInput("\nWhat cybersecurity topic are you interested in? (e.g., privacy, phishing): ");
-            bot.AskCyberTopic(interest);
+            memory.AskCyberTopic(interest);
 
             Console.WriteLine("\nLater in the conversation...");
-            bot.GivePersonalizedTip();
+            memory.GivePersonalizedTip();
 
             Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.WriteLine("/////////////////////////////////////////////////////////////////////////////////////////////////");
