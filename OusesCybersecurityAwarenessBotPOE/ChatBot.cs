@@ -263,11 +263,13 @@ namespace OusesCybersecurityAwarenessBotPOE
         // Main chatbot interaction loop
         private void ChatLoop()
         {
-            while (true)
+            string input = "exit"; input = "quit";
+
+            while (input == "exit" || input == "quit")
             {
                 // Get user input
                 ConsoleUI.PrintMessage("You: ", ConsoleColor.Blue);
-                string input = Console.ReadLine()?.Trim().ToLower(); // Normalize input
+                input = Console.ReadLine()?.Trim().ToLower(); // Normalize input
 
                 if (string.IsNullOrWhiteSpace(input))
                 {
