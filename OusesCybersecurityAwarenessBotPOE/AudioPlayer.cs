@@ -13,7 +13,7 @@ namespace OusesCybersecurityAwarenessBotPOE
     {
         public static void PlayGreeting()
         {
-            string audioFilePath = Path.Combine(Directory.GetCurrentDirectory(), "WelcomeToOuses.wav"); // Ensure full path resolution
+            string audioFilePath = Path.Combine(Directory.GetCurrentDirectory(), "HumeAI_2025May26_0429b5e2-51bd-4612-a364-885a1a7c9205146656_5971312b-bf16-4a01-a7f1-ac0da314d096.wav"); // Ensure full path resolution
             try
             {
                 using (SoundPlayer player = new SoundPlayer(audioFilePath))
